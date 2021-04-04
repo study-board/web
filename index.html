@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!-- Primary Meta Tags -->
+    <title>Study Board - a calming study organizer for students</title>
+    <meta name="title" content="Study Board - a calming study organizer for students">
+    <meta name="description" content="Improve your productivity with Study Board - a study organiser than can play music, show calming videos and more.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studyboard.srg.codes">
+    <meta property="og:title" content="Study Board - a calming study organizer for students">
+    <meta property="og:description" content="Improve your productivity with Study Board - a study organiser than can play music, show calming videos and more.">
+    <meta property="og:image" content="assets/images/og.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studyboard.srg.codes">
+    <meta property="twitter:title" content="Study Board - a calming study organizer for students">
+    <meta property="twitter:description" content="Improve your productivity with Study Board - a study organiser than can play music, show calming videos and more.">
+    <meta property="twitter:image" content="assets/images/og.png">
+
+    <!-- Media meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <!-- Preload scripts -->
+    <!-- [[None]] -->
+
+    <!-- Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ETM4D3TEX8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ETM4D3TEX8');
+    </script>
+
+</head>
+
+<body>
+
+    <div id="cards-container" class="container">
+
+        <div class="video-container">
+
+            <span id="player"></span>
+
+        </div>
+
+        <div id="card-controls" class="card draggable controls">
+
+            <h1>Welcome to StudyBoard</h1>
+
+            <h2>Video controls</h2>
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="new-video-url">Youtube Video URL</label>
+                    </td>
+
+                    <td>
+                        <input type="url" id="new-video-url" placeholder="https://www.youtube.com/watch?v=H1_bkuWCmO4">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="changeVideo(document.getElementById('new-video-url'))" >Go</button>
+                    </td>
+                </tr>
+
+            </table>
+
+            <h2>Cards</h2>
+            <h3>Add new card</h3>
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="new-card-title">Card title</label>
+                    </td>
+
+                    <td>
+                        <input type="text" id="new-card-title" placeholder="Google Search">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="new-card-url">Webpage URL</label>
+                    </td>
+
+                    <td>
+                        <input type="url" id="new-card-url" placeholder="https://google.com">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="addNewCard(document.getElementById('new-card-url').value)" >+ Add</button>
+                    </td>
+                </tr>
+
+            </table>
+
+            <h3>Cards currently active</h3>
+            <ul id="active-cards">
+                <li>Loading...</li>
+            </ul>
+
+        </div>
+
+        <a class="share" onclick="share()" href="#">&#128279; Share your studyboard</a>
+
+        <!-- <div class="card draggable">
+            <div class="clickable"></div>
+            <iframe src="//jmss-time.github.io/time-updated"></iframe>
+        </div> -->
+
+    </div>
+
+    <script src="assets/js/drag.js" type="module"></script>
+    <script src="assets/js/background_video.js"></script>
+    <script src="assets/js/studyboard.js" type="module"></script> 
+
+</body>

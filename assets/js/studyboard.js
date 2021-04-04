@@ -114,9 +114,9 @@ window.updateCardsList = () => {
 
     });
 
-    history.pushState({
+    cards.filter(e => !e.preloaded).length>0 && history.pushState({
         cards: cards
-    }, "", "?cards=" + btoa(JSON.stringify(cards)));
+    }, "", "?cards=" + btoa(JSON.stringify(cards.filter(e => !e.preloaded))));
 
 }
 

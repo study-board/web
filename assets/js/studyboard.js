@@ -37,6 +37,14 @@ window.loadCards = function (cards) {
         newResizeable.classList.add("resizeable");
         newResizeable.classList.add('static');
 
+        newClickable.ondblclick = () => {
+            if (confirm("Remove this card?")) {
+                newCard.remove();
+                cards = cards.filter((e) => e !== c);
+                updateCardsList();
+            }
+        }
+
         let newFrame = document.createElement("iframe");
         newFrame.src = url;
 
@@ -77,6 +85,14 @@ window.addNewCard = function () {
     let newClickable = document.createElement("div");
     newClickable.classList.add("clickable");
     newClickable.classList.add("static");
+
+    newClickable.ondblclick = () => {
+        if (confirm("Remove this card?")) {
+            newCard.remove();
+            cards = cards.filter((e) => e !== c);
+            updateCardsList();
+        }
+    }
 
     let newResizeable = document.createElement("div");
     newResizeable.classList.add("resizeable");

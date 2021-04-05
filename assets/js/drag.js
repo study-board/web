@@ -23,7 +23,7 @@ window.dragMoveListener = dragMoveListener
 interact('.' + config.draggableClassName)
   .resizable({
     // resize from all edges and corners
-    edges: { left: true, right: true, bottom: true, top: true },
+    edges: { left: true, right: false, bottom: false, top: true },
 
     listeners: {
       move (event) {

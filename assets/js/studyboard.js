@@ -31,11 +31,17 @@ window.loadCards = function (cards) {
 
         let newClickable = document.createElement("div");
         newClickable.classList.add("clickable");
+        newClickable.classList.add("static");
+
+        let newResizeable = document.createElement("div");
+        newResizeable.classList.add("resizeable");
+        newResizeable.classList.add('static');
 
         let newFrame = document.createElement("iframe");
         newFrame.src = url;
 
         newCard.appendChild(newClickable);
+        newCard.appendChild(newResizeable);
         newCard.appendChild(newFrame);
 
         newCard.id = id;
@@ -70,11 +76,17 @@ window.addNewCard = function () {
 
     let newClickable = document.createElement("div");
     newClickable.classList.add("clickable");
+    newClickable.classList.add("static");
+
+    let newResizeable = document.createElement("div");
+    newResizeable.classList.add("resizeable");
+    newResizeable.classList.add('static');
 
     let newFrame = document.createElement("iframe");
     newFrame.src = url;
 
     newCard.appendChild(newClickable);
+    newCard.appendChild(newResizeable);
     newCard.appendChild(newFrame);
 
     newCard.id = id;
